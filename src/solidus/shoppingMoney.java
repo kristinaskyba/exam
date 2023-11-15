@@ -3,7 +3,8 @@ package solidus;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static wshop6.solidus.shoppingSolidus.merch;
+import static solidus.shoppingSolidus.merch;
+
 
 
 //18. Det finns en intern valuta ”solidus” som man
