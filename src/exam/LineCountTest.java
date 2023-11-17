@@ -1,6 +1,5 @@
 package exam;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,10 +7,10 @@ import static org.junit.Assert.assertTrue;
 
 public class LineCountTest {
     @Test
-    public void testEnteredText() { //Printing new line if not STOP
+    public void testEnteredText() { //Printing new line if stop is not used
         TextPrinter test = new TextPrinter();
         String expected = "Java is killing me :=)";
-        String actual = test.readAndOutputText("no, its not :=)");
+        String actual = test.readAndOutputText("no. it's not");
         assertEquals(expected, actual);
     }
 
@@ -19,7 +18,7 @@ public class LineCountTest {
     public void testStopWord() { //Not printing line if STOP used
         TextPrinter test = new TextPrinter();
         String expected = "";
-        String actual = test.readAndOutputText("If not stop, then printing this text");
+        String actual = test.readAndOutputText("printing line if stop not used");
         assertEquals(expected, actual);
     }
 
@@ -55,13 +54,13 @@ public class LineCountTest {
         TextPrinter calc = new TextPrinter();
         calc.getTextInfo("Find the loooongest word");
         String actual = calc.longest;
-        Assert.assertEquals("loooongest", actual);
+       assertEquals("loooongest", actual);
     }
 
     @Test
     public void testBooleanStopWord() { //Testing if boolean is working
         TextPrinter calc = new TextPrinter();
-        calc.setStopWord(true);
-        assertTrue("To check if STOP return boolean", calc.isOne());
+        calc.setStopWord(false);//when stop word set to true, isOne returns true
+        assertTrue("If you see this message, then boolean is not set to true", calc.isOne());
     }
 }
